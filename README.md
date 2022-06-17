@@ -1,2 +1,2 @@
 # BobcatHotel
-Recreating one of my first academic projects in C++. 
+Recreating one of my first academic projects in C++ as opposed to Java.
