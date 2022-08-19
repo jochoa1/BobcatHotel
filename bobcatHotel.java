@@ -104,22 +104,34 @@ public class bobcatHotel{
 
         int mealOpt = input.nextInt();
         double meal1 = 0, meal2 = 30, meal3 = 50, meal4 = 85;
-        if (mealOpt == 1){
+        if (mealOpt == 0){
             mealCost = meal1 * nights * guests;
-        } else if (mealOpt == 2){
+        } else if (mealOpt == 1){
             mealCost = meal2 * nights * guests;
-        } else if (mealOpt == 3){
+        } else if (mealOpt == 2){
             mealCost = meal3 * nights * guests;
-        } else if (mealOpt == 4){
+        } else if (mealOpt == 3){
             mealCost = meal4 * nights * guests;
         }
         
         System.out.println();
 
         System.out.println("CHECKOUT");
-        System.out.println("Room Cost: ");
-        System.out.println("Meal Cost: ");
-        System.out.println("Preliminary Total Cost: ");
+        System.out.println("Room Cost: \t\t" + " $" + (roomCost));
+        switch(mealOpt){
+        case 0:
+			break;
+		case 1:
+			System.out.println("Meal Cost: \t\t" + "+$" + (mealCost));
+			break;
+		case 2:
+			System.out.println("Meal Cost: \t\t" + "+$" + (mealCost));
+			break;
+		case 3:
+			System.out.println("Meal Cost: \t\t" + "+$" + (mealCost));
+			break;
+        }
+		System.out.println("Preliminary Total Cost:  " + "$" + (roomCost+mealCost));
         System.out.println("AAA Discount: ");
         System.out.println("Club Member Discount: ");
         System.out.println("Total Cost of Booking: ");
