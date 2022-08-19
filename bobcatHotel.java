@@ -5,11 +5,9 @@ public class bobcatHotel{
     public static void main(String[] args){
 
         Scanner input = new Scanner(System.in);
-        int yes = 1 , no = 1; 
         double mealCost = 0;
         double roomCost = 0;
-        double memberDiscount = 0;
-        double aaaDiscount = 0;
+        double clubDiscount = 0;
 
         System.out.println("ROOM OPTIONS");
         System.out.println("1. Single @ $50.50 per night");
@@ -41,12 +39,12 @@ public class bobcatHotel{
             roomCost = room5 * nights;
         }
 
-        System.out.print("Are you a AAA member (enter 1 for yes, 0 for no)? ");
-		int aaa = input.nextInt();
-        if (aaa == 1){
-            aaaDiscount = ((roomCost + mealCost)*0.1);
-        } else if (aaa == 0){
-            aaaDiscount = 0;
+        System.out.print("Are you a club member (enter 1 for yes, 0 for no)? ");
+		int member = input.nextInt();
+        if (member == 1){
+            clubDiscount = ((roomCost + mealCost)*0.1);
+        } else if (member == 0){
+            clubDiscount = 0;
         }
         
         //System.out.print("Are you a club member (enter 1 for yes, 0 for no)? ");
@@ -117,23 +115,31 @@ public class bobcatHotel{
         System.out.println();
 
         System.out.println("CHECKOUT");
-        System.out.println("Room Cost: \t\t" + " $" + (roomCost));
+        System.out.println("Room Cost: \t\t" + " $" + (double)(roomCost));
         switch(mealOpt){
         case 0:
 			break;
 		case 1:
-			System.out.println("Meal Cost: \t\t" + "+$" + (mealCost));
+			System.out.println("Meal Cost: \t\t" + "+$" + (double)(mealCost));
 			break;
 		case 2:
-			System.out.println("Meal Cost: \t\t" + "+$" + (mealCost));
+			System.out.println("Meal Cost: \t\t" + "+$" + (double)(mealCost));
 			break;
 		case 3:
-			System.out.println("Meal Cost: \t\t" + "+$" + (mealCost));
+			System.out.println("Meal Cost: \t\t" + "+$" + (double)(mealCost));
 			break;
         }
-		System.out.println("Preliminary Total Cost:  " + "$" + (roomCost+mealCost));
-        System.out.println("AAA Discount: ");
-        System.out.println("Club Member Discount: ");
-        System.out.println("Total Cost of Booking: ");
+
+		System.out.println("Preliminary Total Cost:  " + "$" + (double)(roomCost+mealCost));
+        
+        switch (member) {
+        case 1:
+            System.out.println("Club Member Discount: \t" + "-$" + (double)(mealCost + roomCost)*0.1);
+            break;
+        case 0:
+            break;
+        }
+
+		System.out.print("Total Cost of Booking: \t" + " $" + (double)((mealCost+roomCost)-(mealCost + roomCost)*0.1));
     }
 }
